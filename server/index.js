@@ -9,7 +9,7 @@ const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const path = require("path");
 
 const app = express();
-dotenv.config();
+dotenv.config({ path: path.resolve(__dirname, "./.env") });
 
 connectDB();
 
