@@ -7,11 +7,12 @@ import {
   isSameUser,
 } from "../config/ChatLogic";
 import { ChatState } from "../context/ChatProvider";
+import ScrollableFeed from "react-scrollable-feed";
 
 const ScrollableChat = ({ messages }) => {
   const { user } = ChatState();
   return (
-    <div>
+    <ScrollableFeed>
       {messages &&
         messages.map((m, i) => (
           <div style={{ display: "flex" }} key={m._id}>
@@ -45,7 +46,7 @@ const ScrollableChat = ({ messages }) => {
             </span>
           </div>
         ))}
-    </div>
+    </ScrollableFeed>
   );
 };
 
